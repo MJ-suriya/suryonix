@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suryonix (SRNX) Token</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans scroll-smooth">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full bg-gray-950/70 backdrop-blur-md shadow z-50">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center py-4">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <img src="logo.png" alt="Suryonix Logo" class="w-8 h-8">
+        <span class="font-bold text-lg">Suryonix (SRNX)</span>
+      </div>
+      <!-- Links -->
+      <div class="hidden md:flex space-x-6">
+        <a href="#home" class="hover:text-yellow-400 transition">Home</a>
+        <a href="#about" class="hover:text-yellow-400 transition">About</a>
+        <a href="#tokenomics" class="hover:text-yellow-400 transition">Tokenomics</a>
+        <a href="#buy" class="hover:text-yellow-400 transition">Buy</a>
+      </div>
+      <!-- Mobile Menu -->
+      <div class="md:hidden">
+        <button id="menu-btn" class="focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Links -->
+    <div id="mobile-menu" class="hidden md:hidden flex-col space-y-2 px-4 pb-4">
+      <a href="#home" class="hover:text-yellow-400 transition">Home</a>
+      <a href="#about" class="hover:text-yellow-400 transition">About</a>
+      <a href="#tokenomics" class="hover:text-yellow-400 transition">Tokenomics</a>
+      <a href="#buy" class="hover:text-yellow-400 transition">Buy</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-gray-900 to-black">
+    <!-- Glowing Planet Logo -->
+    <img src="logo.png" alt="Suryonix Logo" class="w-40 md:w-56 animate-pulse drop-shadow-[0_0_40px_rgba(255,165,0,0.7)]">
+    
+    <h1 class="mt-8 text-4xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-orange-500">
+      Suryonix (SRNX)
+    </h1>
+    <p class="mt-4 text-lg md:text-2xl text-gray-300">The Future of Decentralized Energy</p>
+    <a id="buy" href="https://pancakeswap.finance/swap?outputCurrency=0x23878a4e370D6A94c6E00aEE16C38ea1672e9f8a" target="_blank" 
+       class="mt-8 px-6 py-3 rounded-2xl bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-semibold shadow-lg hover:scale-105 transition transform">
+       Buy on PancakeSwap
+    </a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 px-6 max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-12 text-yellow-400">About Suryonix</h2>
+    <p class="text-gray-300 text-center leading-relaxed">
+      Suryonix (SRNX) is a revolutionary cryptocurrency inspired by the limitless energy of the sun. 
+      Built on the BNB Smart Chain, Suryonix empowers decentralized communities by combining energy 
+      efficiency, blockchain transparency, and long-term sustainability. SRNX aims to fuel the next 
+      wave of decentralized innovation while being driven by its strong community.
+    </p>
+  </section>
+
+  <!-- Tokenomics Section -->
+  <section id="tokenomics" class="py-20 px-6 bg-gray-800">
+    <h2 class="text-3xl font-bold text-center mb-12 text-yellow-400">Tokenomics</h2>
+    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <div class="bg-gray-900 p-6 rounded-2xl shadow-lg text-center hover:shadow-xl transition">
+        <h3 class="text-xl font-semibold text-yellow-400">Total Supply</h3>
+        <p class="text-gray-300 mt-2">1,000,000,000 SRNX</p>
+      </div>
+      <div class="bg-gray-900 p-6 rounded-2xl shadow-lg text-center hover:shadow-xl transition">
+        <h3 class="text-xl font-semibold text-yellow-400">Circulating Supply</h3>
+        <p class="text-gray-300 mt-2">50,000,000 SRNX</p>
+      </div>
+      <div class="bg-gray-900 p-6 rounded-2xl shadow-lg text-center hover:shadow-xl transition">
+        <h3 class="text-xl font-semibold text-yellow-400">Contract Address</h3>
+        <p class="text-gray-300 mt-2 break-all">0x23878a4e370D6A94c6E00aEE16C38ea1672e9f8a</p>
+      </div>
+      <div class="bg-gray-900 p-6 rounded-2xl shadow-lg text-center hover:shadow-xl transition">
+        <h3 class="text-xl font-semibold text-yellow-400">Network</h3>
+        <p class="text-gray-300 mt-2">BNB Smart Chain</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 px-6 bg-gray-950 text-center">
+    <p class="text-gray-500">&copy; <span id="year"></span> Suryonix (SRNX). All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+</body>
+</html>
